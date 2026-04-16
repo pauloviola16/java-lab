@@ -1,25 +1,19 @@
-# 🚀 Task API com Docker
+# JavaLab 🧪
 
-API simples em Java (Spring Boot) para prática de Docker.
+Repositório utilizado como laboratório de estudos em desenvolvimento backend com Java.
 
-## 🛠 Tecnologias
-- Java 17
-- Spring Boot
-- Maven
+## Objetivo
+
+Praticar e testar conceitos na prática, como:
+
+- APIs REST com Spring Boot
 - Docker
+- Tratamento de exceções
+- Documentação com Swagger
+- Banco de dados (SQL)
+- Testes e boas práticas
 
-## ▶️ Como rodar
+## Observações
 
-```bash
-mvn clean package
-docker build -t task-api .
-docker run -p 8080:8080 task-api
-```
-
-## 📌 Objetivo
-
-Praticar containerização de uma aplicação Java e simular um cenário real de backend.
-
-## 🔗 Outros projetos
-
-https://github.com/pauloviola16/
+Este não é um projeto final, mas sim um ambiente de aprendizado contínuo.
+As implementações podem evoluir ou ser modificadas conforme novos estudos.
