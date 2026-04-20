@@ -4,6 +4,7 @@ import com.example.task_api.model.Task;
 import com.example.task_api.service.TaskService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,19 +28,19 @@ public class TaskController {
 
     @Operation(summary = "Criar uma nova task")
     @PostMapping
-    public Task create(@RequestBody Task task) {
+    public Task create(@RequestBody @Valid Task task) {
         return service.create(task);
     }
 
     @Operation(summary = "Atualizar task de acordo com seu ID")
     @PutMapping("/{id}/done")
-    public Task markDone(@PathVariable Long id) {
+    public Task markDone(@PathVariable @Valid Long id) {
         return service.markDone(id);
     }
 
     @Operation(summary = "Deletar task de acordo com seu ID")
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable @Valid Long id) {
         service.delete(id);
     }
 }

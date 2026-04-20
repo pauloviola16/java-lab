@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Schema(description = "Dados de entrada de uma task")
@@ -15,7 +17,10 @@ public class Task {
     private Long id;
 
     @Schema(description = "Título de uma task", example = "TaskN1")
+    @NotBlank(message = "Titulo é obrigatório")
+    @Size(min = 5, message = "Precisa ter no mínimo 5 caractéres")
     private String title;
+
     private boolean done;
 
     public Task(){
